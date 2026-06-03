@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeapFrog Learning Friends 100 Words Book</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fff6;
+            color: #12321f;
+            line-height: 1.6;
+        }
+
+        img,
+        iframe {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 24px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav h2 {
+            color: #11a647;
+        }
+
+        .nav-btn,
+        .btn {
+            background: #11a647;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e8ffe8, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge,
+        .section-title span,
+        .benefit-text span,
+        .price span {
+            display: inline-block;
+            background: #d9ffd9;
+            color: #0b8f3a;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #4d6355;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .secondary {
+            background: white;
+            color: #11a647;
+            border: 2px solid #11a647;
+        }
+
+        .trust {
+            margin-top: 28px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-weight: 700;
+        }
+
+        .hero-image {
+            background: white;
+            padding: 20px;
+            border-radius: 34px;
+            box-shadow: 0 25px 80px rgba(17, 166, 71, .18);
+        }
+
+        .hero-image img {
+            border-radius: 24px;
+            object-fit: contain;
+            max-height: 500px;
+        }
+
+        .problem {
+            padding: 90px 20px;
+            text-align: center;
+            background: #12321f;
+            color: white;
+        }
+
+        .problem h2 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .problem p {
+            max-width: 760px;
+            margin: auto;
+            font-size: 19px;
+            color: #d6e8dc;
+        }
+
+        .features,
+        .video-showcase,
+        .gallery,
+        .specs,
+        .faq {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+        }
+
+        .section-title p {
+            max-width: 720px;
+            margin: 14px auto 0;
+            color: #536b5d;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card,
+        .faq-box,
+        .spec-card {
+            background: white;
+            padding: 28px;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, .06);
+        }
+
+        .card h3,
+        .faq-box h3,
+        .spec-card h3 {
+            color: #0b8f3a;
+            margin-bottom: 10px;
+        }
+
+        .video-wrapper {
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, .16);
+        }
+
+        .video-wrapper iframe {
+            height: 650px;
+            border: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 24px;
+            background: white;
+            padding: 10px;
+        }
+
+        .gallery-grid img:first-child {
+            grid-row: span 2;
+            height: 620px;
+            object-fit: contain;
+        }
+
+        .benefits {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .benefit-image img {
+            min-height: 460px;
+            object-fit: contain;
+            border-radius: 34px;
+            background: white;
+            padding: 20px;
+        }
+
+        .benefit-text h2 {
+            font-size: 44px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .benefit-text p {
+            color: #536b5d;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .benefit-text ul {
+            list-style: none;
+        }
+
+        .benefit-text li {
+            background: white;
+            margin-bottom: 12px;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-weight: 700;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .price {
+            max-width: 900px;
+            margin: 70px auto;
+            padding: 75px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #11a647, #79d928);
+            color: white;
+            border-radius: 40px;
+        }
+
+        .price span {
+            background: white;
+            color: #0b8f3a;
+        }
+
+        .price h2 {
+            font-size: 44px;
+        }
+
+        .amount {
+            font-size: 58px;
+            font-weight: 900;
+            margin: 16px 0;
+        }
+
+        .price .btn {
+            background: white;
+            color: #0b8f3a;
+        }
+
+        .faq-box {
+            margin-bottom: 16px;
+        }
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            background: #12321f;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+
+            .hero-content,
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .feature-grid,
+            .spec-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid img:first-child {
+                grid-row: auto;
+                height: 300px;
+            }
+
+            .video-wrapper iframe {
+                height: 430px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1,
+            .problem h2,
+            .section-title h2,
+            .benefit-text h2,
+            .price h2 {
+                font-size: 34px;
+            }
+
+            .feature-grid,
+            .spec-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-wrapper iframe {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <nav class="nav">
+            <h2>Learning Friends</h2>
+            <a href="#order" class="nav-btn">Order Now</a>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge">For Ages 18+ Months</span>
+                <h1>Help Your Child Learn 100+ Words While Having Fun</h1>
+                <p>
+                    The LeapFrog Learning Friends 100 Words Book is an interactive educational toy that helps toddlers
+                    learn words, sounds, songs, animals, food, colors, activities, and more through touch-and-listen
+                    play.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#order" class="btn">Order on WhatsApp</a>
+                    <a href="#features" class="btn secondary">See Features</a>
+                </div>
+
+                <div class="trust">
+                    <span>✔ 100+ words</span>
+                    <span>✔ English & Spanish</span>
+                    <span>✔ Touch-sensitive pages</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://cdn-tp2.mozu.com/28945-m4/cms/files/L0173356.jpg"
+                    alt="Learning Friends 100 Words Book">
+            </div>
+        </div>
+    </header>
+
+    <section class="video-showcase">
+        <div class="section-title">
+            <span>Watch It In Action</span>
+            <h2>See How The Product Works</h2>
+            <p>
+                Watch the demo to see how children can touch the pictures, hear words, enjoy sounds, and learn through
+                interactive play.
+            </p>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/kaUDqVB7-mk" title="Learning Friends Demo Video"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="problem">
+        <h2>Is Your Child Always Reaching for Phones?</h2>
+        <p>
+            Give them something better — a fun learning toy that keeps them engaged while helping them build early
+            vocabulary, listening skills, object recognition, and confidence.
+        </p>
+    </section>
+
+    <section id="features" class="features">
+        <div class="section-title">
+            <span>Why Parents Love It</span>
+            <h2>Learning That Feels Like Play</h2>
+        </div>
+
+        <div class="feature-grid">
+            <div class="card">
+                <h3>100+ Words</h3>
+                <p>Introduces toddlers to over 100 age-appropriate words across everyday categories.</p>
+            </div>
+
+            <div class="card">
+                <h3>Touch & Listen</h3>
+                <p>Children touch pictures on the pages to hear words, phrases, sound effects, and fun facts.</p>
+            </div>
+
+            <div class="card">
+                <h3>Word Categories</h3>
+                <p>Includes animals, food, colors, activities, opposites, body parts, and household objects.</p>
+            </div>
+
+            <div class="card">
+                <h3>Bilingual Learning</h3>
+                <p>Supports English and Spanish, helping children hear words in two languages.</p>
+            </div>
+
+            <div class="card">
+                <h3>Music & Songs</h3>
+                <p>The light-up star button plays fun learning songs to keep children engaged.</p>
+            </div>
+
+            <div class="card">
+                <h3>Portable Design</h3>
+                <p>Built with a carry handle so children can hold it, carry it, and use it anywhere.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="section-title">
+            <span>Product Gallery</span>
+            <h2>Take A Closer Look</h2>
+        </div>
+
+        <div class="gallery-grid">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Nk_xc8MayR5Boto-VooakYNgO0X3KZKuTA&s"
+                alt="Product photo 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG4wizz17qCciQZRHJM7IzXwpGcq2ihhnZLg&s"
+                alt="Product photo 2">
+            <img src="https://i5.walmartimages.com/asr/f886f237-c7aa-4bdb-9f1b-76d08b1dfc29.48d4daae631fe2f877fce22f000902f2.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+                alt="Product photo 3">
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefit-image">
+            <img src="https://i5.walmartimages.com/asr/f5c61350-4976-4f37-9f26-4482c44eaadd.5b1b71e165167b7a6daa35b22b1a1a56.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+                alt="Child learning with word book">
+        </div>
+
+        <div class="benefit-text">
+            <span>Smart Choice For Toddlers</span>
+            <h2>More Than A Toy — It Helps Your Child Learn Early</h2>
+            <p>
+                This learning book encourages children to listen, repeat words, recognize objects, and build confidence
+                while playing.
+            </p>
+
+            <ul>
+                <li>Improves vocabulary and word recognition</li>
+                <li>Encourages independent learning</li>
+                <li>Helps reduce phone and screen dependency</li>
+                <li>Perfect as a birthday or educational gift</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="specs">
+        <div class="section-title">
+            <span>Product Details</span>
+            <h2>Technical Details & Specifications</h2>
+        </div>
+
+        <div class="spec-grid">
+            <div class="spec-card">
+                <h3>Recommended Age</h3>
+                <p>Suitable for children from 18 months and above.</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>Learning Content</h3>
+                <p>Teaches 100+ words, sounds, songs, categories, and basic vocabulary.</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>Language Mode</h3>
+                <p>Includes English and Spanish learning modes.</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>Power Source</h3>
+                <p>Uses 2 AA batteries.</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>Material</h3>
+                <p>Made with child-friendly plastic material for everyday handling.</p>
+            </div>
+
+            <div class="spec-card">
+                <h3>Interactive Parts</h3>
+                <p>Touch-sensitive pages, light-up star button, sound effects, and songs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="price" id="order">
+        <span>Limited Stock Available</span>
+        <h2>Get Yours Today</h2>
+        <p class="amount">₦55,000</p>
+        <p>Send a message now to confirm availability, delivery fee, and payment details.</p>
+
+        <a href="https://wa.me/YOUR_WHATSAPP_NUMBER_HERE?text=Hello%2C%20I%20want%20to%20order%20the%20Learning%20Friends%20100%20Words%20Book"
+            class="btn">
+            Order on WhatsApp
+        </a>
+    </section>
+
+    <section class="faq">
+        <div class="section-title">
+            <span>Questions</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-box">
+            <h3>What age is it for?</h3>
+            <p>It is suitable for children from 18 months and above.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>Does it use batteries?</h3>
+            <p>Yes. It uses 2 AA batteries.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>What does the child learn?</h3>
+            <p>Words, animals, food, colors, activities, opposites, sounds, and songs.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>How do I order?</h3>
+            <p>Click the WhatsApp order button and send a message to confirm availability.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Learning Friends Sales Page. Built for product sales.</p>
+    </footer>
+
+</body>
+
+</html>
